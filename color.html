@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <ol id="list">
+        <li style="background-color: green;" class="li 1"></li>
+        <li style="background-color: yellow;" class="li 2"></li>
+        <li style="background-color: blue;" class="li 3"></li>
+        <li style="background-color: red;" class="li 4"></li>
+        <li style="background-color: aqua;" class="li 5"></li>
+    </ol> <br><br>
+    <h1>Color is:<span id="value">click on color</span></h1> 
+<script >
+
+    
+        
+ let color=0;
+ const liItem=document.querySelectorAll(".li") ;
+ const displayColor=document.getElementById("value");
+  
+ liItem.forEach( function(clr){
+    clr.addEventListener("click",(e1)=>{
+        let data=e1.currentTarget.classList;
+        if(data.contains("1")){
+            color="green" ;
+        }else if(data.contains("2")){
+            color="yellow";
+        }else if(data.contains("3")){
+            color="blue";
+        }else if(data.contains("4")){
+           color= "red";
+        }else{
+            color="aqua ";
+        }
+        value.textContent=color;
+    })
+ })   
+</script>
+</body>
+</html>
